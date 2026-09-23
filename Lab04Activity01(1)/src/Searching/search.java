@@ -4,8 +4,6 @@
  */
 package Searching;
 import java.util.Scanner;
-import java.util.Random;
-import lab03activity2.Lab03Activity2;
 public class search {
     public static int linearSearch(int[] arr, int target)
     {
@@ -35,42 +33,14 @@ public class search {
     }
     public static void main(String[] args) 
     {
-        // Initialize Scanner and Random variables
         Scanner sc = new Scanner(System.in);
-        Random rand = new Random();
+        System.out.println("Enter the target you want to search: ");
+        int[] LinearArray={45, 12, 78, 34, 23, 89, 56};
+        int[] BinaryArray={12, 23, 34, 45, 56, 78, 89};
         
-        System.out.println("Enter the Size of Array: ");
-        int size=sc.nextInt();
-        int[] arr=new int[size];
-        
-        // Initialize the random generated Array
-        for (int i = 0; i < size; i++) {
-            arr[i]=rand.nextInt(size*10);       
-        }
-        
-        // Print the random generated Array
-        for (int i = 0; i < size; i++) {
-            System.out.print(arr[i]+" ");       
-        }
-        
-        // Sorting the Array
-        Lab03Activity2 sort=new Lab03Activity2();
-        sort.mergeSort(arr,0,arr.length-1);
-        
-        // Printing the Sorted Array
-        System.out.println("\nSorted Array:");
-        for (int i = 0; i < size; i++) {
-            System.out.print(arr[i]+" ");       
-        }
-        
-        // Taking Target input from User and Searching using Linear and Binary Search
-        System.out.println("\nEnter the target you want to search: ");
         int x = sc.nextInt();
-
-        int resultBinary=binarySearch(arr,0,arr.length-1,x);
-        int resultLinear=linearSearch(arr,x);
-        
-        // Printing the Result
+        int resultBinary=binarySearch(BinaryArray,0,BinaryArray.length-1,x);
+        int resultLinear=linearSearch(LinearArray,x);
         System.out.println("Result of Linear Search: Index: "+resultLinear);
         System.out.println("Result of Binary Search: Index: "+resultBinary);
     }   
